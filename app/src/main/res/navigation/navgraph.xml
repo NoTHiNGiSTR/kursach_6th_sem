@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/projectListFragment">
+
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.example.kursach_6th_sem.ProjectListFragment"
+        android:label="fragment_project_list"
+        tools:layout="@layout/fragment_project_list" >
+        <action
+            android:id="@+id/action_projectListFragment_to_projectFragment"
+            app:destination="@id/projectFragment"
+            app:popUpTo="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_authorizationFragment2"
+            app:destination="@id/authorizationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectFragment"
+        android:name="com.example.kursach_6th_sem.ProjectFragment"
+        android:label="fragment_project"
+        tools:layout="@layout/fragment_project" >
+        <action
+            android:id="@+id/action_projectFragment_to_taskFragment"
+            app:destination="@id/taskFragment"
+            app:popUpTo="@id/projectFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.kursach_6th_sem.TaskFragment"
+        android:label="fragment_task"
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_taskFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.kursach_6th_sem.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.kursach_6th_sem.AuthorizationFragment"
+        android:label="fragment_authorization"
+        tools:layout="@layout/fragment_authorization" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_profileFragment2"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">kursach_6th_sem</string>
+    <string name="inWork">В работе</string>
+    <string name="done">Готово</string>
+    <string name="notStarted">Не начато</string>
+    <string name="deadLine">Дедлайн</string>
+    <string name="description">Описание</string>
+    <string name="status">Статус</string>
+    <string name="profile">Профиль</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="text_size_large">30sp</dimen>
+
+</resources>
