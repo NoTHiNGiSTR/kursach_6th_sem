@@ -2,8 +2,8 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Base.Theme.Kursach_6th_sem"
     android:layout_width="match_parent"
-    android:background="@color/darkPurple"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
@@ -15,7 +15,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         app:cardCornerRadius="20dp"
-        android:background="@drawable/custom_card_view">
+        android:theme="@style/CardColor">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +43,8 @@
                     android:layout_height="30dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/edit"
+                    style="@style/CustomButton"
+                    android:src="@drawable/car_ui_icon_edit"
                     android:text="Button" />
 
                 <ImageButton
@@ -54,6 +55,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
+                    style="@style/CustomButton"
                     android:src="@drawable/car_ui_icon_close"
                     android:text="Button" />
             </LinearLayout>
