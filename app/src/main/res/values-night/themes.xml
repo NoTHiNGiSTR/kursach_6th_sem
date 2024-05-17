@@ -6,13 +6,11 @@
         <item name="colorSecondary">@color/purple</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
     <style name="Margins" parent  = "Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
     </style>
-
     <style name="Button" parent = "Theme.AppCompat.Light.NoActionBar">
         <item name="android:background">@drawable/button_dark</item>
         <item name="android:textColor">@color/white</item>
@@ -21,7 +19,6 @@
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
     </style>
-
     <style name="CustomButton" parent = "Theme.AppCompat.Light.NoActionBar">
         <item name="android:background">@drawable/custom_button_dark</item>
         <item name="android:textColor">@color/white</item>
@@ -30,24 +27,19 @@
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
     </style>
-
     <style name="Title" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:background">@color/purple</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
     <style name="Card" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:background">@drawable/custom_card_view_dark</item>
     </style>
-
     <style name="CardColor" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:background">#534C57</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
     <style name="SearchView" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:background">@drawable/search_view_dark</item>
         <item name="android:textColor">@color/black</item>
     </style>
-
 </resources>
