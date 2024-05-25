@@ -29,7 +29,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ProfileHeader" />
 
         <TextView
-            android:id="@+id/Phone"
+            android:id="@+id/Email"
             android:textSize="@dimen/text_size_big"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,17 +41,7 @@
             app:layout_constraintStart_toStartOf="@+id/Nickname"
             app:layout_constraintTop_toBottomOf="@+id/Nickname" />
 
-        <TextView
-            android:id="@+id/Email"
-            android:textSize="@dimen/text_size_big"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            style="@style/Margins"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Nickname"
-            app:layout_constraintTop_toBottomOf="@+id/Phone" />
+
 
         <TextView
             android:id="@+id/ProfileHeader"
@@ -76,16 +66,6 @@
             android:src="@drawable/car_ui_icon_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/Employee"
-            android:textSize="@dimen/text_size_big"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Margins"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/Nickname"
-            app:layout_constraintTop_toBottomOf="@+id/Email" />
 
 
 

@@ -7,6 +7,7 @@ import com.example.kursach_6th_sem.sharedPreference.SharedPrefs
 import dagger.hilt.android.HiltAndroidApp
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.jackson.JacksonConverterFactory
 
 
 //@HiltAndroidApp
@@ -20,7 +21,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        retrofit = Retrofit.Builder().baseUrl("http://192.168.78.52:3000/api/")
+        retrofit = Retrofit.Builder().baseUrl("http://192.168.52.52:3000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

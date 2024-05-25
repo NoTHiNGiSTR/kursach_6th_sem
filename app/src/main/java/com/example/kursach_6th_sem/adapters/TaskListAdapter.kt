@@ -5,22 +5,28 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kursach_6th_sem.R
+import com.example.kursach_6th_sem.api.entities.ProjectData
+import com.example.kursach_6th_sem.api.entities.TaskData
+import com.example.kursach_6th_sem.api.models.TaskViewModel
 
-class TaskListAdapter(): RecyclerView.Adapter<TaskListHolder>() {
+class TaskListAdapter(private var taskList: List<TaskData>, private  val viewModel: TaskViewModel): RecyclerView.Adapter<TaskListHolder>() {
+
+    var onItemClick : ((TaskData) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskListHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.task_item, parent, false)
-        return TaskListHolder(view)
+        return TaskListHolder(view, viewModel)
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return taskList.size
     }
 
     override fun onBindViewHolder(holder: TaskListHolder, position: Int) {
-        holder.bind()
-
+        val item = taskList[position]
+        holder.bind(item)
         holder.itemView.setOnClickListener{
-            Navigation.findNavController(it).navigate(R.id.action_projectFragment_to_taskFragment)
+            onItemClick?.invoke(item)
         }
     }
 }

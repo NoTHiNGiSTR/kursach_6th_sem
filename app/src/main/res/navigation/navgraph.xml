@@ -20,6 +20,10 @@
         <action
             android:id="@+id/action_projectListFragment_to_authorizationFragment2"
             app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_projectConstructor"
+            app:destination="@id/projectConstructor"
+            app:popUpTo="@id/projectListFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectFragment"
@@ -33,6 +37,12 @@
         <action
             android:id="@+id/action_projectFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_taskConstructor"
+            app:destination="@id/taskConstructor" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
     </fragment>
     <fragment
         android:id="@+id/taskFragment"
@@ -42,6 +52,12 @@
         <action
             android:id="@+id/action_taskFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_taskConstructor"
+            app:destination="@id/taskConstructor" />
+        <action
+            android:id="@+id/action_taskFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -51,14 +67,36 @@
         <action
             android:id="@+id/action_profileFragment_to_projectListFragment"
             app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment"
+            app:popUpTo="@id/projectListFragment" />
     </fragment>
     <fragment
         android:id="@+id/authorizationFragment"
         android:name="com.example.kursach_6th_sem.AuthorizationFragment"
         android:label="fragment_authorization"
-        tools:layout="@layout/fragment_authorization" >
+        tools:layout="@layout/fragment_authorization" />
+    <fragment
+        android:id="@+id/projectConstructor"
+        android:name="com.example.kursach_6th_sem.ProjectConstructor"
+        android:label="fragment_project_constructor"
+        tools:layout="@layout/fragment_project_constructor" >
         <action
-            android:id="@+id/action_authorizationFragment_to_profileFragment2"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_projectConstructor_to_projectFragment"
+            app:destination="@id/projectFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/projectListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskConstructor"
+        android:name="com.example.kursach_6th_sem.TaskConstructor"
+        android:label="fragment_task_constructor"
+        tools:layout="@layout/fragment_task_constructor" >
+        <action
+            android:id="@+id/action_taskConstructor_to_taskFragment"
+            app:destination="@id/taskFragment"
+            app:popUpTo="@id/projectFragment" />
     </fragment>
 </navigation>

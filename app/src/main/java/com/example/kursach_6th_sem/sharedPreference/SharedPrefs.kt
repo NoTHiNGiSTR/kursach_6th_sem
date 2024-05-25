@@ -2,12 +2,14 @@ package com.example.kursach_6th_sem.sharedPreference
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.kursach_6th_sem.api.entities.UserData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class SharedPrefs(val context: Context){
     private val preferenceName = "noth1ng_1s_true"
     val sharedPreferences: SharedPreferences = context.getSharedPreferences(preferenceName, Context.MODE_PRIVATE)
+    var sharedUser: UserData? = null
     private val gson = Gson()
 
     /*Stored String Data*/
@@ -53,5 +55,28 @@ class SharedPrefs(val context: Context){
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.clear()
         editor.apply()
+    }
+
+
+    fun saveUser(uuid: String, name: String, email: String, key_name: String, text: String) {
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString(key_name, text)
+        editor.putBoolean(IS_LOGIN, true)
+        editor.putString(KEY_NAME, name)
+        editor.putString(KEY_EMAIL, email)
+        editor.putString(KEY_UUID, uuid)
+        editor.apply()
+    }
+
+    //объект хранящий данные залогиненного пользователя
+    companion object{
+        val IS_LOGIN = "isLoggedIn"
+        val KEY_NAME = "name"
+        val KEY_EMAIL = "email"
+        val KEY_UUID = "uuid"
+    }
+
+    fun getPreferenceString(key_name: String): String? {
+        return sharedPreferences.getString(key_name, null)
     }
 }

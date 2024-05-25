@@ -15,4 +15,10 @@
     <dimen name="text_size_big">20sp</dimen>
     <dimen name="text_size_large">30sp</dimen>
 
+    <string-array name="task_status">
+        <item>Ещё не начат</item>
+        <item>В работе</item>
+        <item>Завершён</item>
+    </string-array>
+
 </resources>
