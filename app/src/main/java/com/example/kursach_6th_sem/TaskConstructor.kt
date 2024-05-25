@@ -24,7 +24,6 @@ class TaskConstructor : Fragment() {
 
     private var _binding: FragmentTaskConstructorBinding? = null
     private val binding: FragmentTaskConstructorBinding get() = _binding!!
-    private lateinit var sharedPrefs: SharedPrefs
     val projectApi = App.retrofit.create(Api::class.java)
     private var status = "Не начат"
 
@@ -47,21 +46,24 @@ class TaskConstructor : Fragment() {
             binding.deadlineCalendar.date = convertStringToDate(taskToEdit.deadline!!).time
         }
 
-        val calendarView = binding.deadlineCalendar
         var x1 = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         var x2 = Calendar.getInstance().get(Calendar.MONTH) + 1
         var x3 = Calendar.getInstance().get(Calendar.YEAR)
 
-        calendarView.setOnDateChangeListener { calendarView, year, month, day ->
+        var deadline = x1.toString() + "/" + x2.toString() +"/" +x3.toString()
+
+        binding.deadlineCalendar.setOnDateChangeListener { calendarView, year, month, day ->
             // Вызывается при изменении выбранной даты
             x1 = day
             x2 = month+1
             x3 = year
+
+            deadline = x1.toString() + "/" + x2.toString() +"/" +x3.toString()
         }
 
         var name = binding.taskConstructorName.text
         var description = binding.taskConstructorDescription.text
-        var deadline = x1.toString() + "/" + x2.toString() +"/" +x3.toString()
+
 
 
         binding.projectConstructorStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -76,17 +78,7 @@ class TaskConstructor : Fragment() {
         }
 
 
-        binding.createTaskButton.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                val task = TaskData(uuid = null, taskName = name.toString(), description= description.toString(), status= status, priority= false, deadline= deadline, projectUuid= project!!.uuid)
-                val newTask = projectApi.createTask(task)
-                withContext(Dispatchers.Main){
-                    val bundle = Bundle()
-                    bundle.putParcelable("task", newTask)
-                    Navigation.findNavController(it).navigate(R.id.action_taskConstructor_to_taskFragment, bundle)
-                }
-            }
-        }
+
 
 
         val item = arguments?.getParcelable<TaskData>("taskToEdit")
